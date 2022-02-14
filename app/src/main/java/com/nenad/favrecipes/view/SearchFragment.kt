@@ -19,7 +19,7 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-       mBinding = DataBindingUtil.inflate(inflater, R.id.searchFragment, container, false)
+       mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false)
 
 
        mBinding.shimmerRv.showShimmer()
