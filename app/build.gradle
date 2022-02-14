@@ -3,10 +3,12 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
 
 
 
 }
+
 
 android {
     compileSdkVersion 30
