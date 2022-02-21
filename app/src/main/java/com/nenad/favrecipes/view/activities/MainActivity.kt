@@ -1,4 +1,4 @@
-package com.nenad.favrecipes.view
+package com.nenad.favrecipes.view.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         mNavController = navHostFragment.findNavController()
         val appBarConfiguration = AppBarConfiguration(
            setOf(R.id.searchFragment,
-               R.id.favFragment)
+               R.id.favFragment, R.id.foodJokeFragment)
         )
         mBinding.bottomNavigationView.setupWithNavController(mNavController)
 

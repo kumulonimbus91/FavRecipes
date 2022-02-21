@@ -1,4 +1,4 @@
-package com.nenad.favrecipes.view
+package com.nenad.favrecipes.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

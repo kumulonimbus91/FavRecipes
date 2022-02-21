@@ -1,4 +1,4 @@
-package com.nenad.favrecipes.view
+package com.nenad.favrecipes.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,13 +10,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nenad.favrecipes.MyApplication
 import com.nenad.favrecipes.R
 import com.nenad.favrecipes.adapter.RecipesAdapter
-import com.nenad.favrecipes.data.RemoteDataSource
-import com.nenad.favrecipes.data.Repository
 import com.nenad.favrecipes.databinding.FragmentSearchBinding
-import com.nenad.favrecipes.network.ApiServiceInt
 import com.nenad.favrecipes.utils.NetworkResult
 import com.nenad.favrecipes.viewmodels.MainViewModel
 import com.nenad.favrecipes.viewmodels.RecipeViewModel
@@ -29,6 +25,8 @@ class SearchFragment : Fragment() {
 
     private lateinit var mainViewModel: MainViewModel
     private lateinit var recipeViewModel: RecipeViewModel
+
+
 
     private val mAdapter by lazy {
         RecipesAdapter()
@@ -121,6 +119,7 @@ class SearchFragment : Fragment() {
             })
         }
     }
+
 
 
 }
