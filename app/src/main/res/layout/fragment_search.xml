@@ -62,6 +62,7 @@ xmlns:tools="http://schemas.android.com/tools">
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/filterRecipes_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
