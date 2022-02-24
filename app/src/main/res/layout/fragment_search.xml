@@ -18,34 +18,6 @@ xmlns:tools="http://schemas.android.com/tools">
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".view.fragments.SearchFragment">
 
-       <androidx.appcompat.widget.Toolbar
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           app:layout_constraintTop_toTopOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent">
-
-
-
-           <ImageView
-               android:id="@+id/img_search"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:src="@drawable/ic_baseline_search_24"/>
-
-           <EditText
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:hint="Search"/>
-
-
-
-
-
-       </androidx.appcompat.widget.Toolbar>
-
-
-
 
         <com.todkars.shimmer.ShimmerRecyclerView
             android:id="@+id/shimmer_rv"
@@ -73,6 +45,38 @@ xmlns:tools="http://schemas.android.com/tools">
             android:layout_marginRight="8dp"
             android:src="@drawable/ic_baseline_restaurant_24"
             android:layout_marginBottom="24dp"/>
+
+        <ImageView
+            android:id="@+id/error_imageView"
+            readApiResponse="@{viewModel.recipesResponse}"
+            readDatabase="@{viewModel.readRecipes}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:alpha="0.5"
+            android:contentDescription="@string/content_recipes_error"
+            android:src="@drawable/ic_sad"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.37" />
+
+        <TextView
+            android:id="@+id/textView"
+            readApiResponse="@{viewModel.recipesResponse}"
+            readDatabase="@{viewModel.readRecipes}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:alpha="0.5"
+            android:text="@string/no_internet_connection"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/error_imageView"
+            app:layout_constraintStart_toStartOf="@+id/error_imageView"
+            app:layout_constraintTop_toBottomOf="@+id/error_imageView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
