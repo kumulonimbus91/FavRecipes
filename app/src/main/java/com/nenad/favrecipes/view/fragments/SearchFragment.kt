@@ -33,6 +33,9 @@ class SearchFragment : Fragment(), android.widget.SearchView.OnQueryTextListener
 
     private lateinit var mBinding: FragmentSearchBinding
 
+
+
+
     private lateinit var mainViewModel: MainViewModel
     private lateinit var recipeViewModel: RecipeViewModel
 
@@ -106,6 +109,12 @@ class SearchFragment : Fragment(), android.widget.SearchView.OnQueryTextListener
 
 
 
+    }
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        if (query != null) {
+            searchApiData(query)
+        }
+        return true
     }
 
     private fun setupRecyclerView() {
@@ -209,14 +218,14 @@ class SearchFragment : Fragment(), android.widget.SearchView.OnQueryTextListener
         super.onDestroyView()
         // to avoid memory leak
 
+
     }
 
-    override fun onQueryTextSubmit(p0: String?): Boolean {
-        TODO("Not yet implemented")
-    }
 
-    override fun onQueryTextChange(p0: String?): Boolean {
-        TODO("Not yet implemented")
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        // Do not use this function to reduce api request calls.
+        return true
     }
 
 
